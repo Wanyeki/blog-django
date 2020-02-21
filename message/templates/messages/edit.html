@@ -1,0 +1,12 @@
+<h1>Edit article</h1>
+
+<form method="post" action="{% url 'message:edit' article.id  %}">
+{% csrf_token %}
+<label for "title">Title: </label><br>
+<input type="text" value="{{ article.title}}" name="title" placeholder="title" id="title">
+<br>
+<label for "body">Body: </label><br>
+<textarea cols="30" name="body" id="body" rows="5">{{article.body}}</textarea>
+<br>
+<input type="submit" value="Update">
+</form>

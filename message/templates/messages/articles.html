@@ -1,0 +1,20 @@
+<h1>Articles</h1>
+<a href="/articles/add" > add</a>
+<a href="/" > home</a>
+
+<ol>
+{% if articles_list %}
+{% for article in articles_list %}
+<li><a href="{% url 'message:show' article.id%}"><h3>{{ article.title }}</h3></a>
+<p>{{article.body}}
+<br>
+<a href="/articles/edit/{{article.id}}" >edit</a>|
+<a href="/articles/delete/{{article.id}}" >delete</a>
+</p>
+</li>
+
+{% endfor %}
+</ol>
+{% else %}
+<h2>No articles available</h2>
+{% endif %}

@@ -1,0 +1,27 @@
+<a href="{% url 'message:articles'%}">back</a>|
+<h1>{{article.title}}</h1>
+<p>{{article.body}}</p>
+
+<a href="{% url 'message:edit' article.id%}">edit</a>|
+<a href="{% url 'message:delete' article.id%}">delete</a>|
+<a href="{% url 'message:comment' article.id%}">comment</a>
+
+<h2>Comments</h2>
+
+{% if comment_list %}
+{% for comment in  comment_list%}
+<li style="display:flex">
+
+<h4>{{comment.commenter}}</h4>
+<div style="margin-left:30px">
+<p>
+{{comment.body}}
+</p>
+<a href="{% url 'message:edit_comment' article.id comment.id%}">edit</a>|
+<a href="{% url 'message:delete_comment' article.id comment.id%}">delete</a>|
+</div>
+</li>
+{% endfor %}
+{% else %}
+<h3>No comments</h3>
+{% endif %}

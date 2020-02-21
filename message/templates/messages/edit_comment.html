@@ -1,0 +1,12 @@
+<h1>Edit Comment</h1>
+
+<form method="post" action="{% url 'message:edit_comment' article_id comment.id%}">
+{% csrf_token %}
+<label for="commenter" >Commenter:</label><br>
+<input type="text" value="{{comment.commenter}}" name="commenter" id="commenter"><br>
+
+<label for="body">Your Comment:</label><br>
+<textarea cols="30" rows="5" name="body" id="body">{{comment.body}}</textarea><br><br>
+<input type="submit" value="Update">
+
+</form>

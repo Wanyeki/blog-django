@@ -1,0 +1,12 @@
+<h1>Add article</h1>
+
+<form method="post" action="{% url 'message:add'  %}">
+{% csrf_token %}
+<label for "title">Title: </label><br>
+<input type="text" name="title" placeholder="title" id="title">
+<br>
+<label for "body">Body: </label><br>
+<textarea cols="30" name="body" id="body" rows="5"></textarea>
+<br>
+<input type="submit" value="save">
+</form>

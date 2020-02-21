@@ -1,0 +1,12 @@
+<h1>Comment</h1>
+
+<form method="post" action="{% url 'message:comment' article_id%}">
+{% csrf_token %}
+<label for="commenter" >Commenter:</label><br>
+<input type="text" name="commenter" id="commenter"><br>
+
+<label for="body">Your Comment:</label><br>
+<textarea cols="30" rows="5" name="body" id="body"></textarea><br><br>
+<input type="submit" value="comment">
+
+</form>
