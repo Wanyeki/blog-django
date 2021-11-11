@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'messages/upload.css' %}">
+</head>
+<body>
+    
+    <h1 class="top-title">Upload images</h1>
+    <div class="middle-container">
+        <div class="student-details">
+            <h3 class="tip-title">Student details</h3>
+            <p class="detail-entry"><span class="entry-left"> Name:</span><span class="entry-right"> Francis</span> </p>
+            <p class="detail-entry"><span class="entry-left"> Admission:</span><span class="entry-right"> ci/00040/017</span> </p>
+            <p class="detail-entry"><span class="entry-left"> Email:</span><span class="entry-right"> wanyekifs@gmail.com</span> </p>
+            <p class="detail-entry"><span class="entry-left"> Department:</span><span class="entry-right"> Comp science</span> </p>
+
+
+        </div>
+        
+        <div class="form-part">
+        <form method="post" enctype="multipart/form-data" action="{% url 'message:save_image' article_id%}">
+
+        {% csrf_token %}
+            <div class="big-upload">
+                <input type="file" name="images" id="images" class="file-field" accept=".jpg" multiple>
+            </div>
+            
+            
+            <div class="">
+            <input type="submit" value="Train the system" class="upload-btn">
+        </div>
+    </form>
+    </div>
+
+        <div class="upload-tips">
+            <h3 class="tip-title">Note</h3>
+            <ol class="tip_list">
+                <p>
+                <li class="tip_item">Must be front facing</li></p>
+                <p>
+                <li class="tip_item">Must be front facing</li></p>
+                <p>
+                    <li class="tip_item">Must be front facing</li></p>
+                    <p>
+                        <li class="tip_item">Must be front facing</li></p>
+            </ol>
+        </div>
+    </div>
+
+    
+</body>
+</html>

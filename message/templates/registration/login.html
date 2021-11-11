@@ -1,0 +1,15 @@
+<h1>Login</h1>
+{% if form.errors %}error{% endif %}
+
+{% if next %}{% endif %}
+
+<form method="post" action="{% url 'login'%}">
+{% csrf_token %}
+<input name="username" autofocus="" autocapitalize="none" autocomplete="username" maxlength="150" required="" id="id_username" type="text">
+<br><br>
+<input name="password" autocomplete="current-password" required="" id="id_password" type="password"><br><br>
+
+<input type="submit" value="login" name="sumit">
+<input type="hidden" name="next" value="{{ next }}"
+
+</form>

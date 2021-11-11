@@ -8,7 +8,7 @@
 <li><a href="{% url 'message:show' article.id%}"><h3>{{ article.title }}</h3></a>
 <p>{{article.body}}
 <br>
-<a href="/articles/edit/{{article.id}}" >edit</a>|
+<a href="{% url 'message:edit' article.id 1%}" >edit</a>|
 <a href="/articles/delete/{{article.id}}" >delete</a>
 </p>
 </li>

@@ -2,7 +2,7 @@
 <h1>{{article.title}}</h1>
 <p>{{article.body}}</p>
 
-<a href="{% url 'message:edit' article.id%}">edit</a>|
+<a href="{% url 'message:edit' article.id 2%}">edit</a>|
 <a href="{% url 'message:delete' article.id%}">delete</a>|
 <a href="{% url 'message:comment' article.id%}">comment</a>
 
@@ -17,7 +17,7 @@
 <p>
 {{comment.body}}
 </p>
-<a href="{% url 'message:edit_comment' article.id comment.id%}">edit</a>|
+<a href="{% url 'message:edit_comment' article.id comment.id  %}">edit</a>|
 <a href="{% url 'message:delete_comment' article.id comment.id%}">delete</a>|
 </div>
 </li>
